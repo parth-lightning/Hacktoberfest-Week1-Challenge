@@ -13,5 +13,5 @@
     "strict": true,
     "types": ["node"]
   },
-  "include": ["vite.config.ts", "server"]
+  "include": ["vite.config.ts", "server", "packages/core/src"]
 }
