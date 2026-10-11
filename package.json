@@ -1,5 +1,5 @@
 {
-  "name": "sylva-landing-site",
+  "name": "wildpack",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,15 +9,21 @@
   "scripts": {
     "dev": "vite",
     "dev:server": "tsx watch server/index.ts",
+    "dev:all": "concurrently -k \"npm:dev\" \"npm:dev:server\"",
     "build": "tsc -b && vite build",
+    "build:pack": "tsx packages/builder/src/cli.ts",
     "start": "tsx server/index.ts",
     "preview": "vite preview",
     "typecheck": "tsc -b --pretty",
-    "test:core": "tsx --test packages/core/test/geo.test.ts"
+    "test:core": "tsx --test packages/core/test/geo.test.ts packages/core/test/pack.test.ts packages/core/test/retrieval.test.ts src/lib/geofence.test.ts"
   },
   "dependencies": {
     "@designcodeio/threeui": "^1.2.0",
+    "dotenv": "^18.0.7",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.7.1",
+    "fflate": "^0.8.3",
+    "mongodb": "^7.7.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "zod": "^4.6.5"
@@ -28,6 +34,7 @@
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^4.6.0",
+    "concurrently": "^10.0.6",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "vite": "^6.3.5"

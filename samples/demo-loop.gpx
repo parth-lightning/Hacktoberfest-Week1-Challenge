@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="WildPack synthetic demo" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Synthetic WildPack demo loop</name>
+    <desc>Fictional coordinates for software replay only. This is not a real trail.</desc>
+  </metadata>
+  <trk>
+    <name>Demo replay</name>
+    <trkseg>
+      <trkpt lat="0" lon="0"><speed>1.0</speed></trkpt>
+      <trkpt lat="0" lon="0.0003"><speed>1.0</speed></trkpt>
+      <trkpt lat="0" lon="0.0007"><speed>1.0</speed></trkpt>
+      <trkpt lat="0" lon="0.0010"><speed>1.0</speed></trkpt>
+      <trkpt lat="0" lon="0.0014"><speed>1.0</speed></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

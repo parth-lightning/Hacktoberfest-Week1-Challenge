@@ -45,7 +45,21 @@ export const PackManifestSchema = z.object({
   attribution: z.array(z.string().min(1)),
 });
 
+export const AskRequestSchema = z.object({
+  packSlug: z.string().min(1).max(100),
+  question: z.string().trim().min(1).max(1000),
+  chunks: z.array(
+    z.object({
+      id: z.string().min(1).max(100),
+      text: z.string().min(1).max(3000),
+    }).strict(),
+  ).max(5),
+  month: z.number().int().min(1).max(12).optional(),
+  poiName: z.string().max(200).optional(),
+}).strict();
+
 export type Coordinates = z.infer<typeof CoordinatesSchema>;
 export type GeoJsonPoint = z.infer<typeof GeoJsonPointSchema>;
 export type BoundingBox = z.infer<typeof BoundingBoxSchema>;
 export type PackManifest = z.infer<typeof PackManifestSchema>;
+export type AskRequest = z.infer<typeof AskRequestSchema>;

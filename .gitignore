@@ -1,6 +1,7 @@
 node_modules/
 dist/
 public/landing-pages/
+.wildpack-cache/
 .env
 .env.*
 !.env.example

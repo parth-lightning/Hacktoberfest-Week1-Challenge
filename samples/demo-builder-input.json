@@ -1,0 +1,32 @@
+{
+  "name": "Synthetic Builder Example",
+  "bbox": {
+    "west": -0.01,
+    "south": -0.01,
+    "east": 0.01,
+    "north": 0.01
+  },
+  "pois": [
+    {
+      "id": "synthetic-stop",
+      "name": "Synthetic test stop",
+      "type": "other",
+      "coordinates": [0, 0],
+      "radiusM": 40,
+      "tags": ["synthetic", "test"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "synthetic-source",
+      "poiId": "synthetic-stop",
+      "title": "Synthetic builder fixture",
+      "text": "This source is synthetic text created only to exercise the WildPack pack builder. The coordinates at zero latitude and zero longitude are placeholders, not a real trail stop. This example contains no real geographic, ecological, historical, safety, or species information. It must not be used for navigation or as field guidance. Replace this fixture with reviewed material from sources whose licences permit redistribution, and include accurate attribution before creating a pack for a real location.",
+      "license": "Synthetic test fixture; not field data"
+    }
+  ],
+  "species": [],
+  "attribution": [
+    "Synthetic WildPack builder fixture; no external data or real location represented."
+  ]
+}
