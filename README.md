@@ -24,8 +24,10 @@ ollama pull embeddinggemma
 npm run dev:all
 ```
 
-Open `http://localhost:5173`. `dev:all` starts Vite on port 5173 and the Express
-API on port 3001. The app can load its synthetic demo pack without credentials.
+Open `http://localhost:5173` for the original ThreeUI/Sylva 3D landing page.
+Choose **Open WildPack** to enter the product at `http://localhost:5173/app`.
+`dev:all` starts Vite on port 5173 and the Express API on port 3001. The app
+can load its synthetic demo pack without credentials.
 Local Q&A requires the Ollama service and both models above. The API's
 `/api/health` response reports each service status; MongoDB is optional for this
 local prototype.
@@ -105,6 +107,7 @@ Express server serves `dist` when that directory exists.
 
 ```text
 React + Vite PWA
+  ├─ ThreeUI 3D landing page → /app product screens
   ├─ IndexedDB: imported packs and observation journal
   ├─ browser-only geofence / GPX simulation
   └─ Express API (localhost:3001)

@@ -1105,6 +1105,7 @@ function App() {
           <span className={`connection-dot${apiReady ? " is-ready" : ""}`} />
           <span>{apiReady ? "Local API connected" : "Local-only preview"}</span>
           <small>Coordinates stay on this device</small>
+          <a className="landing-return-link" href="/">ThreeUI landing ↗</a>
         </div>
       </aside>
 

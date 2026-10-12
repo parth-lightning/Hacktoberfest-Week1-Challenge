@@ -74,6 +74,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .nav-count { display: grid; width: 21px; height: 21px; margin-left: auto; place-items: center; border-radius: 50%; background: #3e624a; font-size: 10px; }
 .sidebar-bottom { display: grid; grid-template-columns: 9px 1fr; gap: 3px 9px; align-items: center; margin-top: auto; padding: 15px 10px 2px; border-top: 1px solid rgba(255,255,255,.12); color: #bdcbbf; font-size: 10px; }
 .sidebar-bottom small { grid-column: 2; color: #829486; font-size: 9px; }
+.landing-return-link { grid-column: 2; margin-top: 8px; color: #c7d4c9; font-size: 9px; }
+.landing-return-link:hover { color: #fff; text-decoration: underline; }
 .connection-dot, .offline-indicator i, .model-pill i { width: 7px; height: 7px; border-radius: 50%; background: #c18b53; }
 .connection-dot.is-ready { background: #86c28d; }
 .main-area { min-height: 100vh; margin-left: 250px; }

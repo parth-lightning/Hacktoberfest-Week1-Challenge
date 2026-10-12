@@ -5,6 +5,12 @@ Express 5 stack. The SRS calls for Fastify, but the existing Express API is
 retained as previously approved. The app is a desktop-first prototype; see the
 README for setup, verified functionality, and limitations.
 
+The ThreeUI `inner-green-3d.html` Sylva experience is restored as the root
+landing page, inside a small responsive app-entry wrapper. `/app` renders the
+WildPack product UI. The original ThreeUI files and styling are served as-is
+from the installed package; the wrapper provides the product navigation
+without replacing the template.
+
 ## Current product surfaces
 
 | Screen | Current implementation | Important limitation |
@@ -20,6 +26,8 @@ README for setup, verified functionality, and limitations.
 
 ## Main code locations
 
+- `src/site/LandingPage.tsx` and `src/site/landing-page.css`: ThreeUI landing
+  embed and WildPack entry action.
 - `src/site/App.tsx` and `src/site/styles.css`: screens, controls, and
   responsive presentation.
 - `src/lib/storage.ts`: IndexedDB pack/observation persistence.

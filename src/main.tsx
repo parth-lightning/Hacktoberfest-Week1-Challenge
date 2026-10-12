@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./site/App";
+import LandingPage from "./site/LandingPage";
 import "./site/styles.css";
+
+const RootPage = window.location.pathname === "/app" ? App : LandingPage;
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
@@ -13,6 +16,6 @@ if ("serviceWorker" in navigator) {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <RootPage />
   </React.StrictMode>,
 );

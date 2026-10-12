@@ -1,5 +1,12 @@
-const CACHE_NAME = "wildpack-shell-v2";
+const CACHE_NAME = "wildpack-shell-v3";
 const SHELL_URL = "/";
+const LANDING_TEMPLATE_URL = "/landing-pages/inner-green-3d.html";
+const LANDING_ASSETS = [
+  "/landing-pages/inner-green-assets/three.min.js",
+  "/landing-pages/inner-green-assets/lexend-latin.woff2",
+  "/landing-pages/inner-green-assets/card-ethos.jpg",
+  "/landing-pages/inner-green-assets/card-ecostove.jpg",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -11,7 +18,12 @@ self.addEventListener("install", (event) => {
       }
       const html = await response.clone().text();
       await cache.put(SHELL_URL, response);
-      await cache.addAll(["/manifest.webmanifest", "/icons/wildpack.svg"]);
+      await cache.addAll([
+        "/manifest.webmanifest",
+        "/icons/wildpack.svg",
+        LANDING_TEMPLATE_URL,
+        ...LANDING_ASSETS,
+      ]);
 
       const entryAssets = Array.from(
         html.matchAll(/(?:src|href)="([^"]+\.(?:js|css))"/g),
@@ -56,6 +68,7 @@ self.addEventListener("fetch", (event) => {
         .then((response) => {
           if (response.ok) {
             return caches.open(CACHE_NAME).then(async (cache) => {
+              await cache.put(request, response.clone());
               await cache.put(SHELL_URL, response.clone());
               return response;
             });
@@ -63,8 +76,10 @@ self.addEventListener("fetch", (event) => {
           return response;
         })
         .catch(async () => {
-          const cached = await caches.match(SHELL_URL);
+          const cached = await caches.match(request);
           if (cached) return cached;
+          const shell = await caches.match(SHELL_URL);
+          if (shell) return shell;
           return new Response("WildPack is offline and its app shell is not cached yet.", {
             status: 503,
             headers: { "Content-Type": "text/plain; charset=utf-8" },
